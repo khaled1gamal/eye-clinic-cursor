@@ -1,356 +1,681 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mobile Eye Clinic - عيادة عيون متنقلة - خدمات طبية متخصصة في رعاية العيون">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mobile Eye Clinic - عيادة عيون متنقلة - خدمات طبية متخصصة في رعاية العيون"
+    />
     <title>Mobile Eye Clinic | عيادة عيون متنقلة</title>
-    
+
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-    
+
     <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <!-- Language Switcher -->
     <div class="language-switcher">
-        <button id="langBtn" class="lang-btn" aria-label="Switch Language">
-            <span class="lang-text">EN</span>
-            <i class="fas fa-globe"></i>
-        </button>
+      <button id="langBtn" class="lang-btn" aria-label="Switch Language">
+        <span class="lang-text">EN</span>
+        <i class="fas fa-globe"></i>
+      </button>
     </div>
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo">
-                    <i class="fas fa-eye"></i>
-                    <span data-ar="عيادة العيون المتنقلة" data-en="Mobile Eye Clinic">عيادة العيون المتنقلة</span>
-                </div>
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
-                    <li><a href="#why-us" data-ar="لماذا نحن" data-en="Why Us">لماذا نحن</a></li>
-                    <li><a href="#services" data-ar="الخدمات" data-en="Services">الخدمات</a></li>
-                    <li><a href="#how-it-works" data-ar="كيف يعمل" data-en="How It Works">كيف يعمل</a></li>
-                    <li><a href="#booking" data-ar="احجز الآن" data-en="Book Now">احجز الآن</a></li>
-                </ul>
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+      <div class="container">
+        <div class="nav-content">
+          <div class="logo">
+            <i class="fas fa-eye"></i>
+            <span data-ar="عيادة العيون المتنقلة" data-en="Mobile Eye Clinic"
+              >عيادة العيون المتنقلة</span
+            >
+          </div>
+          <ul class="nav-menu" id="navMenu">
+            <li>
+              <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+            </li>
+            <li>
+              <a href="#why-us" data-ar="لماذا نحن" data-en="Why Us"
+                >لماذا نحن</a
+              >
+            </li>
+            <li>
+              <a href="#services" data-ar="الخدمات" data-en="Services"
+                >الخدمات</a
+              >
+            </li>
+            <li>
+              <a href="#how-it-works" data-ar="كيف يعمل" data-en="How It Works"
+                >كيف يعمل</a
+              >
+            </li>
+            <li>
+              <a href="#booking" data-ar="احجز الآن" data-en="Book Now"
+                >احجز الآن</a
+              >
+            </li>
+          </ul>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title" data-ar="رعاية عيونك في مكانك" data-en="Eye Care at Your Location">
-                    <span class="title-line-1">رعاية عيونك</span>
-                    <span class="title-line-2">في مكانك</span>
-                </h1>
-                <p class="hero-description" data-ar="نوفر خدمات طبية متخصصة في رعاية العيون مباشرة عند باب منزلك. فريق طبي محترف وأجهزة حديثة لضمان أفضل رعاية لعينيك." data-en="We provide specialized medical eye care services right at your doorstep. Professional medical team and modern equipment to ensure the best care for your eyes.">
-                    نوفر خدمات طبية متخصصة في رعاية العيون مباشرة عند باب منزلك. فريق طبي محترف وأجهزة حديثة لضمان أفضل رعاية لعينيك.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#booking" class="btn btn-primary" data-ar="احجز موعدك الآن" data-en="Book Your Appointment">
-                        احجز موعدك الآن
-                    </a>
-                    <a href="#services" class="btn btn-secondary" data-ar="اكتشف خدماتنا" data-en="Discover Our Services">
-                        اكتشف خدماتنا
-                    </a>
-                </div>
-            </div>
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="hero-content">
+          <h1
+            class="hero-title"
+            data-ar="رعاية عيونك في مكانك"
+            data-en="Eye Care at Your Location"
+          >
+            <span class="title-line-1">رعاية عيونك</span>
+            <span class="title-line-2">في مكانك</span>
+          </h1>
+          <p
+            class="hero-description"
+            data-ar="نوفر خدمات طبية متخصصة في رعاية العيون مباشرة عند باب منزلك. فريق طبي محترف وأجهزة حديثة لضمان أفضل رعاية لعينيك."
+            data-en="We provide specialized medical eye care services right at your doorstep. Professional medical team and modern equipment to ensure the best care for your eyes."
+          >
+            نوفر خدمات طبية متخصصة في رعاية العيون مباشرة عند باب منزلك. فريق
+            طبي محترف وأجهزة حديثة لضمان أفضل رعاية لعينيك.
+          </p>
+          <div class="hero-buttons">
+            <a
+              href="#booking"
+              class="btn btn-primary"
+              data-ar="احجز موعدك الآن"
+              data-en="Book Your Appointment"
+            >
+              احجز موعدك الآن
+            </a>
+            <a
+              href="#services"
+              class="btn btn-secondary"
+              data-ar="اكتشف خدماتنا"
+              data-en="Discover Our Services"
+            >
+              اكتشف خدماتنا
+            </a>
+          </div>
         </div>
-        <div class="hero-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-        </div>
+      </div>
+      <div class="hero-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
     </section>
 
     <!-- Why Choose Us Section -->
     <section class="why-us" id="why-us">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" data-ar="لماذا تختارنا؟" data-en="Why Choose Us?">لماذا تختارنا؟</h2>
-                <p class="section-subtitle" data-ar="نقدم لك أفضل رعاية طبية لعينيك" data-en="We provide you with the best medical care for your eyes">نقدم لك أفضل رعاية طبية لعينيك</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3 data-ar="خدمة منزلية" data-en="Home Service">خدمة منزلية</h3>
-                    <p data-ar="نأتي إليك في أي مكان تريده، بدون الحاجة للذهاب إلى العيادة" data-en="We come to you anywhere you want, without the need to go to the clinic">نأتي إليك في أي مكان تريده، بدون الحاجة للذهاب إلى العيادة</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-user-md"></i>
-                    </div>
-                    <h3 data-ar="أطباء محترفون" data-en="Professional Doctors">أطباء محترفون</h3>
-                    <p data-ar="فريق من الأطباء المتخصصين ذوي الخبرة العالية في طب العيون" data-en="A team of specialized doctors with high experience in ophthalmology">فريق من الأطباء المتخصصين ذوي الخبرة العالية في طب العيون</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-microscope"></i>
-                    </div>
-                    <h3 data-ar="أجهزة حديثة" data-en="Modern Equipment">أجهزة حديثة</h3>
-                    <p data-ar="نستخدم أحدث الأجهزة الطبية والتقنيات في فحص وعلاج العيون" data-en="We use the latest medical equipment and technologies in eye examination and treatment">نستخدم أحدث الأجهزة الطبية والتقنيات في فحص وعلاج العيون</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3 data-ar="مواعيد مرنة" data-en="Flexible Appointments">مواعيد مرنة</h3>
-                    <p data-ar="نعمل في أوقات تناسبك، بما في ذلك عطلات نهاية الأسبوع" data-en="We work at times that suit you, including weekends">نعمل في أوقات تناسبك، بما في ذلك عطلات نهاية الأسبوع</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 data-ar="آمن ومضمون" data-en="Safe & Secure">آمن ومضمون</h3>
-                    <p data-ar="نتبع أعلى معايير السلامة والنظافة في جميع خدماتنا" data-en="We follow the highest safety and hygiene standards in all our services">نتبع أعلى معايير السلامة والنظافة في جميع خدماتنا</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3 data-ar="رعاية شخصية" data-en="Personalized Care">رعاية شخصية</h3>
-                    <p data-ar="نقدم رعاية مخصصة لكل مريض حسب احتياجاته الخاصة" data-en="We provide personalized care for each patient according to their specific needs">نقدم رعاية مخصصة لكل مريض حسب احتياجاته الخاصة</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2
+            class="section-title"
+            data-ar="لماذا تختارنا؟"
+            data-en="Why Choose Us?"
+          >
+            لماذا تختارنا؟
+          </h2>
+          <p
+            class="section-subtitle"
+            data-ar="نقدم لك أفضل رعاية طبية لعينيك"
+            data-en="We provide you with the best medical care for your eyes"
+          >
+            نقدم لك أفضل رعاية طبية لعينيك
+          </p>
         </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-home"></i>
+            </div>
+            <h3 data-ar="خدمة منزلية" data-en="Home Service">خدمة منزلية</h3>
+            <p
+              data-ar="نأتي إليك في أي مكان تريده، بدون الحاجة للذهاب إلى العيادة"
+              data-en="We come to you anywhere you want, without the need to go to the clinic"
+            >
+              نأتي إليك في أي مكان تريده، بدون الحاجة للذهاب إلى العيادة
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-user-md"></i>
+            </div>
+            <h3 data-ar="أطباء محترفون" data-en="Professional Doctors">
+              أطباء محترفون
+            </h3>
+            <p
+              data-ar="فريق من الأطباء المتخصصين ذوي الخبرة العالية في طب العيون"
+              data-en="A team of specialized doctors with high experience in ophthalmology"
+            >
+              فريق من الأطباء المتخصصين ذوي الخبرة العالية في طب العيون
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-microscope"></i>
+            </div>
+            <h3 data-ar="أجهزة حديثة" data-en="Modern Equipment">
+              أجهزة حديثة
+            </h3>
+            <p
+              data-ar="نستخدم أحدث الأجهزة الطبية والتقنيات في فحص وعلاج العيون"
+              data-en="We use the latest medical equipment and technologies in eye examination and treatment"
+            >
+              نستخدم أحدث الأجهزة الطبية والتقنيات في فحص وعلاج العيون
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3 data-ar="مواعيد مرنة" data-en="Flexible Appointments">
+              مواعيد مرنة
+            </h3>
+            <p
+              data-ar="نعمل في أوقات تناسبك، بما في ذلك عطلات نهاية الأسبوع"
+              data-en="We work at times that suit you, including weekends"
+            >
+              نعمل في أوقات تناسبك، بما في ذلك عطلات نهاية الأسبوع
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 data-ar="آمن ومضمون" data-en="Safe & Secure">آمن ومضمون</h3>
+            <p
+              data-ar="نتبع أعلى معايير السلامة والنظافة في جميع خدماتنا"
+              data-en="We follow the highest safety and hygiene standards in all our services"
+            >
+              نتبع أعلى معايير السلامة والنظافة في جميع خدماتنا
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3 data-ar="رعاية شخصية" data-en="Personalized Care">
+              رعاية شخصية
+            </h3>
+            <p
+              data-ar="نقدم رعاية مخصصة لكل مريض حسب احتياجاته الخاصة"
+              data-en="We provide personalized care for each patient according to their specific needs"
+            >
+              نقدم رعاية مخصصة لكل مريض حسب احتياجاته الخاصة
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Services Section -->
     <section class="services" id="services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" data-ar="خدماتنا" data-en="Our Services">خدماتنا</h2>
-                <p class="section-subtitle" data-ar="مجموعة شاملة من خدمات رعاية العيون" data-en="A comprehensive range of eye care services">مجموعة شاملة من خدمات رعاية العيون</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <h3 data-ar="فحص العيون الشامل" data-en="Comprehensive Eye Exam">فحص العيون الشامل</h3>
-                    <p data-ar="فحص شامل للعين لتشخيص أي مشاكل محتملة" data-en="Comprehensive eye examination to diagnose any potential problems">فحص شامل للعين لتشخيص أي مشاكل محتملة</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-glasses"></i>
-                    </div>
-                    <h3 data-ar="فحص النظر" data-en="Vision Test">فحص النظر</h3>
-                    <p data-ar="قياس دقيق لقوة النظر ووصف النظارات المناسبة" data-en="Accurate measurement of vision and prescription of appropriate glasses">قياس دقيق لقوة النظر ووصف النظارات المناسبة</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-eye-dropper"></i>
-                    </div>
-                    <h3 data-ar="علاج أمراض العيون" data-en="Eye Disease Treatment">علاج أمراض العيون</h3>
-                    <p data-ar="علاج مختلف أمراض العيون مثل الجلوكوما والتهابات العين" data-en="Treatment of various eye diseases such as glaucoma and eye infections">علاج مختلف أمراض العيون مثل الجلوكوما والتهابات العين</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-user-injured"></i>
-                    </div>
-                    <h3 data-ar="طوارئ العيون" data-en="Eye Emergencies">طوارئ العيون</h3>
-                    <p data-ar="خدمة طوارئ سريعة لحالات إصابات العيون الطارئة" data-en="Rapid emergency service for urgent eye injury cases">خدمة طوارئ سريعة لحالات إصابات العيون الطارئة</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-prescription-bottle-alt"></i>
-                    </div>
-                    <h3 data-ar="وصفات طبية" data-en="Medical Prescriptions">وصفات طبية</h3>
-                    <p data-ar="وصف الأدوية المناسبة لعلاج مشاكل العيون" data-en="Prescription of appropriate medications for eye problems">وصف الأدوية المناسبة لعلاج مشاكل العيون</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-stethoscope"></i>
-                    </div>
-                    <h3 data-ar="استشارات طبية" data-en="Medical Consultations">استشارات طبية</h3>
-                    <p data-ar="استشارات مع أطباء متخصصين حول صحة عينيك" data-en="Consultations with specialized doctors about your eye health">استشارات مع أطباء متخصصين حول صحة عينيك</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-ar="خدماتنا" data-en="Our Services">
+            خدماتنا
+          </h2>
+          <p
+            class="section-subtitle"
+            data-ar="مجموعة شاملة من خدمات رعاية العيون"
+            data-en="A comprehensive range of eye care services"
+          >
+            مجموعة شاملة من خدمات رعاية العيون
+          </p>
         </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-eye"></i>
+            </div>
+            <h3 data-ar="فحص العيون الشامل" data-en="Comprehensive Eye Exam">
+              فحص العيون الشامل
+            </h3>
+            <p
+              data-ar="فحص شامل للعين لتشخيص أي مشاكل محتملة"
+              data-en="Comprehensive eye examination to diagnose any potential problems"
+            >
+              فحص شامل للعين لتشخيص أي مشاكل محتملة
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-glasses"></i>
+            </div>
+            <h3 data-ar="فحص النظر" data-en="Vision Test">فحص النظر</h3>
+            <p
+              data-ar="قياس دقيق لقوة النظر ووصف النظارات المناسبة"
+              data-en="Accurate measurement of vision and prescription of appropriate glasses"
+            >
+              قياس دقيق لقوة النظر ووصف النظارات المناسبة
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-eye-dropper"></i>
+            </div>
+            <h3 data-ar="علاج أمراض العيون" data-en="Eye Disease Treatment">
+              علاج أمراض العيون
+            </h3>
+            <p
+              data-ar="علاج مختلف أمراض العيون مثل الجلوكوما والتهابات العين"
+              data-en="Treatment of various eye diseases such as glaucoma and eye infections"
+            >
+              علاج مختلف أمراض العيون مثل الجلوكوما والتهابات العين
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-user-injured"></i>
+            </div>
+            <h3 data-ar="طوارئ العيون" data-en="Eye Emergencies">
+              طوارئ العيون
+            </h3>
+            <p
+              data-ar="خدمة طوارئ سريعة لحالات إصابات العيون الطارئة"
+              data-en="Rapid emergency service for urgent eye injury cases"
+            >
+              خدمة طوارئ سريعة لحالات إصابات العيون الطارئة
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-prescription-bottle-alt"></i>
+            </div>
+            <h3 data-ar="وصفات طبية" data-en="Medical Prescriptions">
+              وصفات طبية
+            </h3>
+            <p
+              data-ar="وصف الأدوية المناسبة لعلاج مشاكل العيون"
+              data-en="Prescription of appropriate medications for eye problems"
+            >
+              وصف الأدوية المناسبة لعلاج مشاكل العيون
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-stethoscope"></i>
+            </div>
+            <h3 data-ar="استشارات طبية" data-en="Medical Consultations">
+              استشارات طبية
+            </h3>
+            <p
+              data-ar="استشارات مع أطباء متخصصين حول صحة عينيك"
+              data-en="Consultations with specialized doctors about your eye health"
+            >
+              استشارات مع أطباء متخصصين حول صحة عينيك
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- How It Works Section -->
     <section class="how-it-works" id="how-it-works">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" data-ar="كيف يعمل" data-en="How It Works">كيف يعمل</h2>
-                <p class="section-subtitle" data-ar="خطوات بسيطة للحصول على رعاية عيونك" data-en="Simple steps to get your eye care">خطوات بسيطة للحصول على رعاية عيونك</p>
-            </div>
-            <div class="steps-container">
-                <div class="step-item">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3 data-ar="احجز موعدك" data-en="Book Your Appointment">احجز موعدك</h3>
-                        <p data-ar="املأ النموذج أدناه أو اتصل بنا مباشرة" data-en="Fill out the form below or call us directly">املأ النموذج أدناه أو اتصل بنا مباشرة</p>
-                    </div>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3 data-ar="تأكيد الموعد" data-en="Confirm Appointment">تأكيد الموعد</h3>
-                        <p data-ar="سنتصل بك لتأكيد الموعد والموقع" data-en="We will call you to confirm the appointment and location">سنتصل بك لتأكيد الموعد والموقع</p>
-                    </div>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3 data-ar="زيارة الفريق" data-en="Team Visit">زيارة الفريق</h3>
-                        <p data-ar="سيأتي فريقنا الطبي إلى موقعك في الوقت المحدد" data-en="Our medical team will come to your location at the scheduled time">سيأتي فريقنا الطبي إلى موقعك في الوقت المحدد</p>
-                    </div>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3 data-ar="الفحص والعلاج" data-en="Examination & Treatment">الفحص والعلاج</h3>
-                        <p data-ar="سيقوم الطبيب بفحص عينيك وتقديم العلاج المناسب" data-en="The doctor will examine your eyes and provide appropriate treatment">سيقوم الطبيب بفحص عينيك وتقديم العلاج المناسب</p>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-ar="كيف يعمل" data-en="How It Works">
+            كيف يعمل
+          </h2>
+          <p
+            class="section-subtitle"
+            data-ar="خطوات بسيطة للحصول على رعاية عيونك"
+            data-en="Simple steps to get your eye care"
+          >
+            خطوات بسيطة للحصول على رعاية عيونك
+          </p>
         </div>
+        <div class="steps-container">
+          <div class="step-item">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3 data-ar="احجز موعدك" data-en="Book Your Appointment">
+                احجز موعدك
+              </h3>
+              <p
+                data-ar="املأ النموذج أدناه أو اتصل بنا مباشرة"
+                data-en="Fill out the form below or call us directly"
+              >
+                املأ النموذج أدناه أو اتصل بنا مباشرة
+              </p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3 data-ar="تأكيد الموعد" data-en="Confirm Appointment">
+                تأكيد الموعد
+              </h3>
+              <p
+                data-ar="سنتصل بك لتأكيد الموعد والموقع"
+                data-en="We will call you to confirm the appointment and location"
+              >
+                سنتصل بك لتأكيد الموعد والموقع
+              </p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3 data-ar="زيارة الفريق" data-en="Team Visit">زيارة الفريق</h3>
+              <p
+                data-ar="سيأتي فريقنا الطبي إلى موقعك في الوقت المحدد"
+                data-en="Our medical team will come to your location at the scheduled time"
+              >
+                سيأتي فريقنا الطبي إلى موقعك في الوقت المحدد
+              </p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3 data-ar="الفحص والعلاج" data-en="Examination & Treatment">
+                الفحص والعلاج
+              </h3>
+              <p
+                data-ar="سيقوم الطبيب بفحص عينيك وتقديم العلاج المناسب"
+                data-en="The doctor will examine your eyes and provide appropriate treatment"
+              >
+                سيقوم الطبيب بفحص عينيك وتقديم العلاج المناسب
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Booking Form Section -->
     <section class="booking" id="booking">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" data-ar="احجز موعدك الآن" data-en="Book Your Appointment Now">احجز موعدك الآن</h2>
-                <p class="section-subtitle" data-ar="املأ النموذج وسنتصل بك قريباً" data-en="Fill out the form and we will contact you soon">املأ النموذج وسنتصل بك قريباً</p>
-            </div>
-            <form class="booking-form" id="bookingForm">
-                <div class="form-group">
-                    <label for="name" data-ar="الاسم الكامل" data-en="Full Name">الاسم الكامل</label>
-                    <input type="text" id="name" name="name" required>
-                    <span class="error-message" data-ar="الرجاء إدخال الاسم" data-en="Please enter your name">الرجاء إدخال الاسم</span>
-                </div>
-                <div class="form-group">
-                    <label for="phone" data-ar="رقم الهاتف" data-en="Phone Number">رقم الهاتف</label>
-                    <input type="tel" id="phone" name="phone" required>
-                    <span class="error-message" data-ar="الرجاء إدخال رقم هاتف صحيح" data-en="Please enter a valid phone number">الرجاء إدخال رقم هاتف صحيح</span>
-                </div>
-                <div class="form-group">
-                    <label for="location" data-ar="الموقع" data-en="Location">الموقع</label>
-                    <input type="text" id="location" name="location" required>
-                    <span class="error-message" data-ar="الرجاء إدخال الموقع" data-en="Please enter your location">الرجاء إدخال الموقع</span>
-                </div>
-                <div class="form-group">
-                    <label for="service" data-ar="اختر الخدمة" data-en="Select Service">اختر الخدمة</label>
-                    <select id="service" name="service" required>
-                        <option value="" data-ar="اختر خدمة" data-en="Select a service">اختر خدمة</option>
-                        <option value="exam" data-ar="فحص العيون الشامل" data-en="Comprehensive Eye Exam">فحص العيون الشامل</option>
-                        <option value="vision" data-ar="فحص النظر" data-en="Vision Test">فحص النظر</option>
-                        <option value="treatment" data-ar="علاج أمراض العيون" data-en="Eye Disease Treatment">علاج أمراض العيون</option>
-                        <option value="emergency" data-ar="طوارئ العيون" data-en="Eye Emergencies">طوارئ العيون</option>
-                        <option value="prescription" data-ar="وصفات طبية" data-en="Medical Prescriptions">وصفات طبية</option>
-                        <option value="consultation" data-ar="استشارات طبية" data-en="Medical Consultations">استشارات طبية</option>
-                    </select>
-                    <span class="error-message" data-ar="الرجاء اختيار خدمة" data-en="Please select a service">الرجاء اختيار خدمة</span>
-                </div>
-                <div class="form-group">
-                    <label for="message" data-ar="رسالة إضافية (اختياري)" data-en="Additional Message (Optional)">رسالة إضافية (اختياري)</label>
-                    <textarea id="message" name="message" rows="4"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-submit" data-ar="إرسال الطلب" data-en="Submit Request">
-                    <span class="btn-text">إرسال الطلب</span>
-                    <i class="fas fa-paper-plane btn-icon"></i>
-                </button>
-            </form>
-            <div class="form-success" id="formSuccess">
-                <i class="fas fa-check-circle"></i>
-                <p data-ar="تم إرسال طلبك بنجاح! سنتصل بك قريباً." data-en="Your request has been sent successfully! We will contact you soon.">تم إرسال طلبك بنجاح! سنتصل بك قريباً.</p>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2
+            class="section-title"
+            data-ar="احجز موعدك الآن"
+            data-en="Book Your Appointment Now"
+          >
+            احجز موعدك الآن
+          </h2>
+          <p
+            class="section-subtitle"
+            data-ar="املأ النموذج وسنتصل بك قريباً"
+            data-en="Fill out the form and we will contact you soon"
+          >
+            املأ النموذج وسنتصل بك قريباً
+          </p>
         </div>
+        <form class="booking-form" id="bookingForm">
+          <div class="form-group">
+            <label for="name" data-ar="الاسم الكامل" data-en="Full Name"
+              >الاسم الكامل</label
+            >
+            <input type="text" id="name" name="name" required />
+            <span
+              class="error-message"
+              data-ar="الرجاء إدخال الاسم"
+              data-en="Please enter your name"
+              >الرجاء إدخال الاسم</span
+            >
+          </div>
+          <div class="form-group">
+            <label for="phone" data-ar="رقم الهاتف" data-en="Phone Number"
+              >رقم الهاتف</label
+            >
+            <input type="tel" id="phone" name="phone" required />
+            <span
+              class="error-message"
+              data-ar="الرجاء إدخال رقم هاتف صحيح"
+              data-en="Please enter a valid phone number"
+              >الرجاء إدخال رقم هاتف صحيح</span
+            >
+          </div>
+          <div class="form-group">
+            <label for="location" data-ar="الموقع" data-en="Location"
+              >الموقع</label
+            >
+            <input type="text" id="location" name="location" required />
+            <span
+              class="error-message"
+              data-ar="الرجاء إدخال الموقع"
+              data-en="Please enter your location"
+              >الرجاء إدخال الموقع</span
+            >
+          </div>
+          <div class="form-group">
+            <label for="service" data-ar="اختر الخدمة" data-en="Select Service"
+              >اختر الخدمة</label
+            >
+            <select id="service" name="service" required>
+              <option value="" data-ar="اختر خدمة" data-en="Select a service">
+                اختر خدمة
+              </option>
+              <option
+                value="exam"
+                data-ar="فحص العيون الشامل"
+                data-en="Comprehensive Eye Exam"
+              >
+                فحص العيون الشامل
+              </option>
+              <option value="vision" data-ar="فحص النظر" data-en="Vision Test">
+                فحص النظر
+              </option>
+              <option
+                value="treatment"
+                data-ar="علاج أمراض العيون"
+                data-en="Eye Disease Treatment"
+              >
+                علاج أمراض العيون
+              </option>
+              <option
+                value="emergency"
+                data-ar="طوارئ العيون"
+                data-en="Eye Emergencies"
+              >
+                طوارئ العيون
+              </option>
+              <option
+                value="prescription"
+                data-ar="وصفات طبية"
+                data-en="Medical Prescriptions"
+              >
+                وصفات طبية
+              </option>
+              <option
+                value="consultation"
+                data-ar="استشارات طبية"
+                data-en="Medical Consultations"
+              >
+                استشارات طبية
+              </option>
+            </select>
+            <span
+              class="error-message"
+              data-ar="الرجاء اختيار خدمة"
+              data-en="Please select a service"
+              >الرجاء اختيار خدمة</span
+            >
+          </div>
+          <div class="form-group">
+            <label
+              for="message"
+              data-ar="رسالة إضافية (اختياري)"
+              data-en="Additional Message (Optional)"
+              >رسالة إضافية (اختياري)</label
+            >
+            <textarea id="message" name="message" rows="4"></textarea>
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary btn-submit"
+            data-ar="إرسال الطلب"
+            data-en="Submit Request"
+          >
+            <span class="btn-text">إرسال الطلب</span>
+            <i class="fas fa-paper-plane btn-icon"></i>
+          </button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <i class="fas fa-check-circle"></i>
+          <p
+            data-ar="تم إرسال طلبك بنجاح! سنتصل بك قريباً."
+            data-en="Your request has been sent successfully! We will contact you soon."
+          >
+            تم إرسال طلبك بنجاح! سنتصل بك قريباً.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2 data-ar="جاهز لرعاية عينيك؟" data-en="Ready to Care for Your Eyes?">جاهز لرعاية عينيك؟</h2>
-                <p data-ar="اتصل بنا الآن واحصل على أفضل رعاية طبية لعينيك" data-en="Contact us now and get the best medical care for your eyes">اتصل بنا الآن واحصل على أفضل رعاية طبية لعينيك</p>
-                <a href="#booking" class="btn btn-cta" data-ar="احجز الآن" data-en="Book Now">احجز الآن</a>
-            </div>
+      <div class="container">
+        <div class="cta-content">
+          <h2
+            data-ar="جاهز لرعاية عينيك؟"
+            data-en="Ready to Care for Your Eyes?"
+          >
+            جاهز لرعاية عينيك؟
+          </h2>
+          <p
+            data-ar="اتصل بنا الآن واحصل على أفضل رعاية طبية لعينيك"
+            data-en="Contact us now and get the best medical care for your eyes"
+          >
+            اتصل بنا الآن واحصل على أفضل رعاية طبية لعينيك
+          </p>
+          <a
+            href="#booking"
+            class="btn btn-cta"
+            data-ar="احجز الآن"
+            data-en="Book Now"
+            >احجز الآن</a
+          >
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <i class="fas fa-eye"></i>
-                        <span data-ar="عيادة العيون المتنقلة" data-en="Mobile Eye Clinic">عيادة العيون المتنقلة</span>
-                    </div>
-                    <p data-ar="نوفر خدمات طبية متخصصة في رعاية العيون مباشرة عند باب منزلك." data-en="We provide specialized medical eye care services right at your doorstep.">نوفر خدمات طبية متخصصة في رعاية العيون مباشرة عند باب منزلك.</p>
-                </div>
-                <div class="footer-section">
-                    <h3 data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h3>
-                    <ul>
-                        <li><a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
-                        <li><a href="#why-us" data-ar="لماذا نحن" data-en="Why Us">لماذا نحن</a></li>
-                        <li><a href="#services" data-ar="الخدمات" data-en="Services">الخدمات</a></li>
-                        <li><a href="#booking" data-ar="احجز الآن" data-en="Book Now">احجز الآن</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3 data-ar="معلومات التواصل" data-en="Contact Information">معلومات التواصل</h3>
-                    <ul class="contact-info">
-                        <li>
-                            <i class="fas fa-phone"></i>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <i class="fas fa-eye"></i>
+              <span data-ar="عيادة العيون المتنقلة" data-en="Mobile Eye Clinic"
+                >عيادة العيون المتنقلة</span
+              >
+            </div>
+            <p
+              data-ar="نوفر خدمات طبية متخصصة في رعاية العيون مباشرة عند باب منزلك."
+              data-en="We provide specialized medical eye care services right at your doorstep."
+            >
+              نوفر خدمات طبية متخصصة في رعاية العيون مباشرة عند باب منزلك.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h3 data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h3>
+            <ul>
+              <li>
+                <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+              </li>
+              <li>
+                <a href="#why-us" data-ar="لماذا نحن" data-en="Why Us"
+                  >لماذا نحن</a
+                >
+              </li>
+              <li>
+                <a href="#services" data-ar="الخدمات" data-en="Services"
+                  >الخدمات</a
+                >
+              </li>
+              <li>
+                <a href="#booking" data-ar="احجز الآن" data-en="Book Now"
+                  >احجز الآن</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3 data-ar="معلومات التواصل" data-en="Contact Information">
+              معلومات التواصل
+            </h3>
+            <ul class="contact-info">
+              <li>
+                <i class="fas fa-phone"></i>
 
-                            <span dir="ltr">+20 112 8763665</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span>Mohamedredaabdelbasset@gmail.com</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span data-ar="المملكة العربية السعودية" data-en="Saudi Arabia">المملكة العربية السعودية</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3 data-ar="تابعنا" data-en="Follow Us">تابعنا</h3>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
+                <span dir="ltr">+20 112 8763665</span>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <span>Mohamedredaabdelbasset@gmail.com</span>
+              </li>
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span data-ar="المملكة العربية السعودية" data-en="Saudi Arabia"
+                  >المملكة العربية السعودية</span
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3 data-ar="تابعنا" data-en="Follow Us">تابعنا</h3>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="WhatsApp"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 <span data-ar="عيادة العيون المتنقلة" data-en="Mobile Eye Clinic">عيادة العيون المتنقلة</span>. <span data-ar="جميع الحقوق محفوظة" data-en="All rights reserved">جميع الحقوق محفوظة</span>.</p>
-            </div>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2024
+            <span data-ar="عيادة العيون المتنقلة" data-en="Mobile Eye Clinic"
+              >عيادة العيون المتنقلة</span
+            >.
+            <span data-ar="جميع الحقوق محفوظة" data-en="All rights reserved"
+              >جميع الحقوق محفوظة</span
+            >.
+          </p>
+        </div>
+      </div>
     </footer>
 
     <!-- Scripts -->
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
