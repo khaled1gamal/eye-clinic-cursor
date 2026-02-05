@@ -829,9 +829,9 @@ body[dir="rtl"] .step-item:nth-child(even) .step-content:hover {
   margin-bottom: var(--spacing-sm);
 }
 
-.footer-logo i {
-  font-size: 2rem;
-  color: var(--secondary-color);
+.footer-logo img {
+  border-radius: 10px;
+  width: 40px;
 }
 
 .footer-section h3 {
